@@ -1,0 +1,25 @@
+LINK     :     https://chat.openai.com/share/be3386e9-a9a3-41e8-824a-0c58c6cd9203
+
+
+class Solution {
+    public List<List<Integer>> combine(int n, int k) {
+           List<List<Integer>> combinations = new ArrayList<>();
+           Set<List<Integer>> unique = new HashSet<>();
+
+            backtrack(1,n,k,new ArrayList<>(),unique);
+
+            combinations.addAll(unique);
+            return combinations;
+    }
+    private void backtrack(int start,int n,int k,List<Integer> path,Set<List<Integer>> unique){
+           if(path.size() == k){
+               unique.add(new ArrayList<>(path));
+               return;
+           }
+           for(int i=start;i<=n;i++){
+               path.add(i);
+               backtrack(i+1,n,k,path,unique);
+               path.remove(path.size() - 1);
+           }
+    }
+}
