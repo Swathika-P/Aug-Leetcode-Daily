@@ -18,7 +18,6 @@ class UnionFind {
         parent[pu] = pv;
     }
 }
-
 class Solution {
     public List<List<Integer>> findCriticalAndPseudoCriticalEdges(int n, int[][] edges) {
         List<Integer> critical = new ArrayList<>();
