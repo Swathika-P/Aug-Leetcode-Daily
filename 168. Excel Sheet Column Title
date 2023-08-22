@@ -3,7 +3,6 @@ class Solution {
         if (n < 27) {
             return Character.toString((char) ('A' + (n - 1) % 26));
         }
-
         StringBuilder c = new StringBuilder();
         while (n > 0) {
             if (n % 26 == 0) {
